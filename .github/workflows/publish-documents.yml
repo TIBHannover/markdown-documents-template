@@ -1,0 +1,57 @@
+name: Publish documents
+on: [push]
+
+env:
+  MARKDOWN_SOURCE_FILENAME: "course"
+
+jobs:
+  prepare-pandoc:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.com/tibhannover/oer/course-pandoc-preparation
+    steps:
+      - uses: actions/checkout@v3
+      - run: /build/pandoc-preparation.sh $MARKDOWN_SOURCE_FILENAME
+      - uses: actions/upload-artifact@v3
+        with:
+          name: prepared-data
+          path: ${{ github.workspace }}
+          retention-days: 1
+
+  build-documents:
+    runs-on: ubuntu-latest
+    container:
+      image: pandoc/latex:3.1.1
+    needs: prepare-pandoc
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: prepared-data
+      - run: |
+          ls -l
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t epub3 -s -o $MARKDOWN_SOURCE_FILENAME.epub --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t latex --request-header User-Agent:"$GITHUB_REPOSITORY ($GITHUB_SERVER_URL/$GITHUB_REPOSITORY)" -s -o $MARKDOWN_SOURCE_FILENAME.pdf --metadata pagetitle="$GITHUB_REPOSITORY" --webtex -V linkcolor:blue
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t html -s -o index.html --metadata pagetitle="$GITHUB_REPOSITORY" --include-in-header=metadata.json --katex --css pandoc.css
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t asciidoc -s -o $MARKDOWN_SOURCE_FILENAME.asc --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
+          mkdir .public
+          cp -r * .public
+          mv .public public
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-documents
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

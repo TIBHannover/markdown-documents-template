@@ -1,0 +1,21 @@
+---
+name: "Mein OER Kurs"
+creator:
+  - givenName: "Max"
+    familyName: "Mustermann"
+  - givenName: "Maxi"
+    familyName: "Mustermann"
+publisher:
+  givenName: "Max"
+  familyName: "Mustermann"
+keywords:
+  - "Geometrie"
+  - "Pythagoras"
+  - "Mathematik"
+description: "Skizze für einen Kurs"
+inLanguage: "de"
+version: 1.0
+license: "https://creativecommons.org/share-your-work/public-domain/cc0/"
+thumbnailUrl: http://placehold.it/100x100
+learningResourceType: "Modul"
+creativeWorkStatus: "Draft" # Incomplete, Draft, Published
