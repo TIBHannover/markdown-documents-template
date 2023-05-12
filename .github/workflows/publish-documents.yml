@@ -6,6 +6,7 @@ env:
 
 jobs:
   prepare-pandoc:
+    runs-on: ubuntu-latest
     container:
       image: registry.gitlab.com/tibhannover/oer/course-pandoc-preparation
     steps:
@@ -13,6 +14,7 @@ jobs:
       - run: /build/pandoc-preparation.sh $MARKDOWN_SOURCE_FILENAME
   
   deploy-documents:
+    runs-on: ubuntu-latest
     container:
       image: pandoc/latex:3.1.1
     needs: prepare-pandoc
