@@ -1,0 +1,19 @@
+name: Publish documents
+on: [push]
+
+env:
+  MARKDOWN_SOURCE_FILENAME: "course"
+
+jobs:
+  prepare-pandoc:
+    container:
+      image: registry.gitlab.com/tibhannover/oer/course-pandoc-preparation
+    steps:
+      - uses: actions/checkout@v2
+      - run: /build/pandoc-preparation.sh $MARKDOWN_SOURCE_FILENAME
+  
+  deploy-documents:
+    container:
+      image: pandoc/latex:3.1.1
+    needs: prepare-pandoc
+      - run: ls -l
