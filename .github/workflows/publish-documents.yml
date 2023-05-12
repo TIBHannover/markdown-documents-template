@@ -27,4 +27,12 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: prepared-data
-      - run: ls -l
+      - run: |
+          ls -l
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t epub3 -s -o $MARKDOWN_SOURCE_FILENAME.epub --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t latex --request-header User-Agent:"$GITHUB_REPOSITORY ($GITHUB_SERVER_URL/$GITHUB_REPOSITORY)" -s -o $MARKDOWN_SOURCE_FILENAME.pdf --metadata pagetitle="$GITHUB_REPOSITORY" --webtex -V linkcolor:blue
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t html -s -o index.html --metadata pagetitle="$GITHUB_REPOSITORY" --include-in-header=metadata.json --katex --css pandoc.css
+          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t asciidoc -s -o $MARKDOWN_SOURCE_FILENAME.asc --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
+          mkdir .public
+          cp -r * .public
+          mv .public public
