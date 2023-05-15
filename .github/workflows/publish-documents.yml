@@ -18,7 +18,7 @@ jobs:
           path: ${{ github.workspace }}
           retention-days: 1
 
-  deploy-documents:
+  build-documents:
     runs-on: ubuntu-latest
     container:
       image: pandoc/latex:3.1.1
@@ -36,3 +36,18 @@ jobs:
           mkdir .public
           cp -r * .public
           mv .public public
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-documents
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
