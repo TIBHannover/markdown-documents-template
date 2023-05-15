@@ -22,6 +22,7 @@ Dieses Projekt als Vorlage für eigene Kurse verwenden.
     * mit [Metadaten-Generator](https://tibhannover.gitlab.io/oer/course-metadata-gitlab-form/metadata-generator.html) // UNDER CONSTRUCTION!
 * course.md anpassen
 * Links in der README.md anpassen
+* Pages aktivieren https://github.com/TIBHannover/markdown-documents-template/settings/pages
 
 Beim ersten Durchlauf kann es bis zu ca. 15min dauern, bis die Dateien generiert sind. Weitere Änderungen stehen i.d.R. nach <1min bereit.
 
