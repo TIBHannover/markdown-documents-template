@@ -20,7 +20,7 @@ Dieses Projekt als Vorlage für eigene Kurse verwenden.
     * den grünen Knopf `Use this template` anklicken oder [hier](https://github.com/TIBHannover/markdown-documents-template/generate) klicken
     * einen Namen für das neue Repository eingeben und auf `Create repository from template` klicken
 * Pages aktivieren in den [Einstellungen](../../settings/pages) -> Source: `GitHub Actions`
-* metadata.yml anpassen
+* [metadata.yml anpassen](../../edit/main/metadata.yml)
     * manuell
     * mit [Metadaten-Generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html)
 * Markdown-Dateien (default chapterXX.md) anpassen
