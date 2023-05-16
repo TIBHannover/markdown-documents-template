@@ -24,6 +24,7 @@ Dieses Projekt als Vorlage für eigene Kurse verwenden.
     * manuell
     * mit [Metadaten-Generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html)
 * Markdown-Dateien (default chapterXX.md) anpassen
+    * Achtung: Reihenfolge nach alphabetischer Sortierung der Dateinamen
 
 Die Dateien werden automatisch generiert und stehen i.d.R. nach <1min bereit.
 
