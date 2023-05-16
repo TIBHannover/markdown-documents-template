@@ -2,16 +2,32 @@ name: Publish documents
 on: [push]
 
 env:
-  MARKDOWN_SOURCE_FILENAME: "course"
+  OUTPUT_FILENAME: "document"
 
 jobs:
+  merge-documents:
+    runs-on: ubuntu-latest
+    container:
+      image: pandoc/latex:3.1.1
+    steps:
+      - uses: actions/checkout@v3
+      - run: pandoc -f markdown -t markdown -s -o merged-document.md --file-scope `ls -1 *.md | grep -v -e README.md | tr '\n' ' '`
+      - uses: actions/upload-artifact@v3
+        with:
+          name: merged-data
+          path: ${{ github.workspace }}
+          retention-days: 1
+
   prepare-pandoc:
     runs-on: ubuntu-latest
     container:
       image: registry.gitlab.com/tibhannover/oer/course-pandoc-preparation
+    needs: merge-documents
     steps:
-      - uses: actions/checkout@v3
-      - run: /build/pandoc-preparation.sh $MARKDOWN_SOURCE_FILENAME
+      - uses: actions/download-artifact@v3
+        with:
+          name: merged-data
+      - run: /build/pandoc-preparation.sh merged-document.md
       - uses: actions/upload-artifact@v3
         with:
           name: prepared-data
@@ -29,10 +45,10 @@ jobs:
           name: prepared-data
       - run: |
           ls -l
-          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t epub3 -s -o $MARKDOWN_SOURCE_FILENAME.epub --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
-          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t latex --request-header User-Agent:"$GITHUB_REPOSITORY ($GITHUB_SERVER_URL/$GITHUB_REPOSITORY)" -s -o $MARKDOWN_SOURCE_FILENAME.pdf --metadata pagetitle="$GITHUB_REPOSITORY" --webtex -V linkcolor:blue
-          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t html -s -o index.html --metadata pagetitle="$GITHUB_REPOSITORY" --include-in-header=metadata.json --katex --css pandoc.css
-          pandoc title.txt $MARKDOWN_SOURCE_FILENAME-prepared.md -f markdown -t asciidoc -s -o $MARKDOWN_SOURCE_FILENAME.asc --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
+          pandoc title.txt merged-document-prepared.md -f markdown -t epub3 -s -o $OUTPUT_FILENAME.epub --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
+          pandoc title.txt merged-document-prepared.md -f markdown -t latex --request-header User-Agent:"$GITHUB_REPOSITORY ($GITHUB_SERVER_URL/$GITHUB_REPOSITORY)" -s -o $OUTPUT_FILENAME.pdf --metadata pagetitle="$GITHUB_REPOSITORY" --webtex -V linkcolor:blue
+          pandoc title.txt merged-document-prepared.md -f markdown -t html -s -o index.html --metadata pagetitle="$GITHUB_REPOSITORY" --include-in-header=metadata.json --katex --css pandoc.css
+          pandoc title.txt merged-document-prepared.md -f markdown -t asciidoc -s -o $OUTPUT_FILENAME.asc --metadata pagetitle="$GITHUB_REPOSITORY" --webtex
           mkdir .public
           cp -r * .public
           mv .public public
