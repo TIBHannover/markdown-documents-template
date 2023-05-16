@@ -24,7 +24,6 @@ Dieses Projekt als Vorlage für eigene Kurse verwenden.
     * manuell
     * mit [Metadaten-Generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html)
 * course.md anpassen
-* Links in der README.md anpassen
 
 Die Dateien werden automatisch generiert und stehen i.d.R. nach <1min bereit.
 
