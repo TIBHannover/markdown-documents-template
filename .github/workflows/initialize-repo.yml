@@ -1,9 +1,5 @@
 name: Initialize repo from template
-on:
-  push:
-    paths:
-      - .init-repo.sh
-      - .github/workflows/initialize-repo.yml
+on: [push]
 jobs:
   init:
     name: Reinitialize repository
