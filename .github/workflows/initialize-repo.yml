@@ -1,9 +1,8 @@
 name: Initialize repo from template
 on:
-  workflow_run:
-    workflows: [ "Publish documents" ]
-    types:
-      - completed
+  push:
+    paths:
+      - .init-repo.sh
 jobs:
   init:
     name: Reinitialize repository
