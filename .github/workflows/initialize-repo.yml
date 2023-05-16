@@ -1,0 +1,32 @@
+name: Initialize repo from template
+on:
+  push:
+    paths:
+      - .init-repo.sh
+      - .github/workflows/initialize-repo.yml
+jobs:
+  init:
+    name: Reinitialize repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exit for template repository
+        shell: bash
+        run: |
+          curl --silent -X GET \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/json" \
+          $GITHUB_API_URL/repos/$GITHUB_REPOSITORY \
+          | jq --exit-status '.is_template == false'
+
+      - uses: actions/checkout@v2
+
+      - name: Initialize
+        shell: bash
+        run: ./.init-repo.sh
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+      
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Initialized repo"
