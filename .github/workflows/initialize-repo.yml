@@ -22,7 +22,7 @@ jobs:
 
       - name: Initialize
         shell: bash
-        run: ./init-repo.sh
+        run: ./.init-repo.sh
         env:
           REPO_NAME: ${{ github.event.repository.name }}
       # 
