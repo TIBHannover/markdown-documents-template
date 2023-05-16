@@ -25,8 +25,8 @@ jobs:
         run: ./.init-repo.sh
         env:
           REPO_NAME: ${{ github.event.repository.name }}
-      # 
-      # - name: Commit changes
-      #   uses: stefanzweifel/git-auto-commit-action@v4
-      #   with:
-      #     commit_message: "Initialized repo"
+      
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Initialized repo"
