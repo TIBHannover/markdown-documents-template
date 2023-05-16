@@ -27,7 +27,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: merged-data
-      - run: /build/pandoc-preparation.sh merged-document.md
+      - run: /build/pandoc-preparation.sh merged-document
       - uses: actions/upload-artifact@v3
         with:
           name: prepared-data
