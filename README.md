@@ -8,8 +8,8 @@ Dies ist eine Vorlage für offene und frei lizenzierte Texte, die ansprechende, 
 
 Mit jedem Speichern (Commit) werden die folgenden Dokumente generiert
 
-* [Kurs als Ebook](https://tibhannover.github.io/markdown-documents-template/course.epub)
-* [Kurs als PDF](https://tibhannover.github.io/markdown-documents-template/course.pdf)
+* [Kurs als Ebook](https://tibhannover.github.io/markdown-documents-template/document.epub)
+* [Kurs als PDF](https://tibhannover.github.io/markdown-documents-template/document.pdf)
 * [Kurs als HTML](https://tibhannover.github.io/markdown-documents-template/index.html)
 
 # Nachnutzung
@@ -23,7 +23,8 @@ Dieses Projekt als Vorlage für eigene Kurse verwenden.
 * metadata.yml anpassen
     * manuell
     * mit [Metadaten-Generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html)
-* course.md anpassen
+* Markdown-Dateien (default chapterXX.md) anpassen
+    * Achtung: Reihenfolge nach alphabetischer Sortierung der Dateinamen
 
 Die Dateien werden automatisch generiert und stehen i.d.R. nach <1min bereit.
 
