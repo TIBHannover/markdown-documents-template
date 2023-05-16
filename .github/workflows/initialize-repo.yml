@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - .init-repo.sh
+      - .github/workflows/initialize-repo.yml
 jobs:
   init:
     name: Reinitialize repository
