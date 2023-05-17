@@ -1,17 +1,17 @@
-# Satz des Pythagoras
+# Pythagorean theorem
 
-## Darstellung
+## Representation
 
-![Darstellung des Satz des Pythagoras](https://upload.wikimedia.org/wikipedia/commons/d/d1/01-Rechtwinkliges_Dreieck-Pythagoras.svg)  
+![Representation of the Pythagorean Theorem](https://upload.wikimedia.org/wikipedia/commons/d/d1/01-Rechtwinkliges_Dreieck-Pythagoras.svg)  
 
-![Baum am See](https://upload.wikimedia.org/wikipedia/commons/c/c1/Regnitz-Baum-1012073.jpg)
+![Tree at the lake](https://upload.wikimedia.org/wikipedia/commons/c/c1/Regnitz-Baum-1012073.jpg)
 
-![Petri Netz](https://upload.wikimedia.org/wikipedia/commons/0/08/PetriNetzVentil.png)
+![Petri net](https://upload.wikimedia.org/wikipedia/commons/0/08/PetriNetzVentil.png)
 
-## Die Formel
+## The formula
 
-```math
+``math
 a^2 + b^2 = c^2
 ```
 
-siehe [Kapitel 4](chapter04.md#aufgabe)
+see [chapter 4](chapter04.md#assignment)
