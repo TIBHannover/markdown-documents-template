@@ -1,5 +1,5 @@
 ---
-name: "Mein OER Kurs"
+name: "My OER Course"
 creator:
   - givenName: "Max"
     familyName: "Mustermann"
@@ -9,13 +9,13 @@ publisher:
   givenName: "Max"
   familyName: "Mustermann"
 keywords:
-  - "Geometrie"
+  - "Geometry"
   - "Pythagoras"
-  - "Mathematik"
-description: "Skizze für einen Kurs"
-inLanguage: "de"
+  - "Mathematics"
+description: "Draft for a course"
+inLanguage: "en"
 version: 1.0
 license: "https://creativecommons.org/share-your-work/public-domain/cc0/"
 thumbnailUrl: http://placehold.it/100x100
-learningResourceType: "Modul"
+learningResourceType: "Module"
 creativeWorkStatus: "Draft" # Incomplete, Draft, Published

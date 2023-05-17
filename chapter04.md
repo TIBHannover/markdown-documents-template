@@ -1,7 +1,7 @@
-# Anwendung
+# Application
 
-* Beispiel
+* Example
 
-# Aufgabe
+# Assignment
 
-* Beispielaufgabe mit Lösung
+* Example assignment with solution

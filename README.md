@@ -1,42 +1,40 @@
-# Vorlage für OER-Kurse
+# Template for OER
 
-Dies ist eine Vorlage für offene und frei lizenzierte Texte, die ansprechende, und je nach Vorlage, multimediale Ergebnisse liefert und zusätzlich auch viele aufwendige Arbeiten bei der Erstellung automatisiert. Diese Vorlage kann für Kurse oder Module ebenso genutzt werden, wie für andere Text, wie z.B. Studien- oder Masterarbeiten.
+This is a template for open and freely licensed texts that delivers appealing, and depending on the template, multimedia results. It additionally automates a lot of laborious work during creation. This template can be used for courses or modules as well as for all sorts of texts, including student research papers or theses.
 
-* generiert Metadaten in HTML-Header für OER Repositories and Google Search
-* ergänzt Lizenzhinweise nach TULLU-Regel für Wikimedia-Bilder mit maschinenlesbaren Hinweisen nach CC REL automatisch
-* fügt Lizenzhinweis in generierte Dokumente ein
+* generates metadata in HTML headers for OER repositories and Google search
+* automatically creates license notices according to the [TULLU](https://open-educational-resources.de/wp-content/uploads/graphic_TASLL-rule_OER-2.pdf)-rule for Wikimedia images with machine-readable notices according to CC REL
+* inserts license notice in generated documents
 
-Mit jedem Speichern (Commit) werden die folgenden Dokumente generiert
+With every save (commit) the following documents are generated:
 
-* [Kurs als Ebook](https://tibhannover.github.io/markdown-documents-template/document.epub)
-* [Kurs als PDF](https://tibhannover.github.io/markdown-documents-template/document.pdf)
-* [Kurs als HTML](https://tibhannover.github.io/markdown-documents-template/index.html)
+* [Ebook](https://tibhannover.github.io/markdown-documents-template/document.epub)
+* [PDF](https://tibhannover.github.io/markdown-documents-template/document.pdf)
+* [HTML](https://tibhannover.github.io/markdown-documents-template/index.html)
 
-# Nachnutzung
+# Re-use
 
-Dieses Projekt als Vorlage für eigene Kurse verwenden.
+This project can be used as template for your own OER.
 
-* dieses Repository auf GitHub als Template verwenden
-    * den grünen Knopf `Use this template` anklicken oder [hier](https://github.com/TIBHannover/markdown-documents-template/generate) klicken
-    * einen Namen für das neue Repository eingeben und auf `Create repository from template` klicken
-* Pages aktivieren in den [Einstellungen](../../settings/pages) -> Source: `GitHub Actions`
-* [metadata.yml anpassen](../../edit/main/metadata.yml)
-    * manuell
-    * mit [Metadaten-Generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html)
-* Markdown-Dateien (default chapterXX.md) anpassen
-    * Achtung: Reihenfolge nach alphabetischer Sortierung der Dateinamen
+* use this repository on GitHub as template
+    * click the green button `Use this template` or click [here](https://github.com/TIBHannover/markdown-documents-template/generate)
+    * enter a name for the new repository and click on `Create repository from template`
+* activate pages in the [settings](../../settings/pages) -> Source: `GitHub Actions`
+* adjust [metadata.yml](../../edit/main/metadata.yml)
+    * manually
+    * with the [metadata generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html)
+* customize Markdown files (default chapterXX.md)
+    * attention: order according to alphabetical sorting of file names
 
-Die Dateien werden automatisch generiert und stehen i.d.R. nach <1min bereit.
+The files are generated automatically and are usually ready after < 1 min.
 
 # Updates
+* 2019-11-07 - Machine-readable marking of images according to CC REL.
+* 2019-10-28 - Automatic [TULLU](https://open-educational-resources.de/wp-content/uploads/graphic_TASLL-rule_OER-2.pdf) rule for Wikimedia images.
+* 2019-10-28 - Automatic license notice based on metadata in metadata.yml.
 
-* 2019-11-07 - Machinenlesbare Auszeichnung der Bilder nach CC REL
-* 2019-10-28 - Automatische TULLU-Regel für Wikimedia Bilder
-* 2019-10-28 - Automatischer Lizenzhinweis auf Basis der Metadaten in metadata.yml
-
-Weitere Ideen zur Verbesserung findet ihr unter  [Aufgaben](https://github.com/TIBHannover/markdown-documents-template/issues). Wenn ihr Anregungen oder Verbesserungswünsche habt, kommentiert oder erstellt dort gern Issues.
+You can find more ideas for improvement at [Tasks](https://github.com/TIBHannover/markdown-documents-template/issues). If you have suggestions or improvement requests, feel free to comment or create issues there.
 
 
-# Lizenzhinweis
-
-Diese Vorlage für OER Kurse ist freigegeben unter CC-0 / Public domain. Die Inhalte des Kurses unterliegen der jeweiligen Lizenz, wie sie am Ende der generierten Dateien bzw. in der metadata.yml angegeben sind.
+# License notice
+This template for OER courses is released under CC-0 / public domain. The content of the course is subject to the respective license as indicated at the end of the generated files or in the metadata.yml.
