@@ -17,5 +17,5 @@ inLanguage: "en"
 version: 1.0
 license: "https://creativecommons.org/publicdomain/zero/1.0/"
 thumbnailUrl: http://placehold.it/100x100
-learningResourceType: "Module"
+learningResourceType: "Course"
 creativeWorkStatus: "Draft" # Incomplete, Draft, Published

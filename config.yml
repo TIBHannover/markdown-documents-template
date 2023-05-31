@@ -1,0 +1,12 @@
+output:
+  - format: asciidoc
+  - format: epub
+  - format: html
+  - format: pdf
+generate_landingpage: true
+# content_files:  # uncomment this to set the order of the documents (default alphabetical)
+#   - chapter01.md
+#   - chapter02.md
+#   - chapter03.md
+#   - chapter04.md
+generate_reuse_note: true
