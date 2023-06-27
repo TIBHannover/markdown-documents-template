@@ -23,7 +23,7 @@ or directly
 1. In [settings -> pages](../../settings/pages): choose `GitHub Actions` as Source
 1. Adjust [metadata.yml](../../edit/main/metadata.yml)
     * edit manually or
-    * create metadata with [generator](https:/oersi.gitlab.io/metadata-form/metadata-generator.html) and copy/paste content into metadata.yml
+    * create metadata with [generator](https://oersi.gitlab.io/metadata-form/metadata-generator.html) and copy/paste content into metadata.yml
 1. Output files will be generated automatically and available after aprox. 1 min
 1. Create your content in Markdown files (default chapterXX.md)
 1. You can overwrite this _README.md_ as you like
