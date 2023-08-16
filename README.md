@@ -33,4 +33,4 @@ or directly
 See https://gitlab.com/TIBHannover/oer/markdown-pandoc-processor#options
 
 # License notice
-This template for OER courses is released under CC-0 / public domain. The content of the document is subject to the respective license as indicated at the end of the generated files or in the metadata.yml.
+This template for OER courses is released under MIT. The content of the document is subject to the respective license as indicated at the end of the generated files or in the metadata.yml.
