@@ -7,3 +7,4 @@ cat README.md
 # cleanup init-filees
 rm .init-repo.sh
 rm .github/workflows/initialize-repo.yml
+rm LICENSE
