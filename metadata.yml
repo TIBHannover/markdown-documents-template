@@ -16,6 +16,6 @@ description: "Draft for a course"
 inLanguage: "en"
 version: 1.0
 license: "https://creativecommons.org/publicdomain/zero/1.0/"
-thumbnailUrl: http://placehold.it/100x100
+thumbnailUrl: https://placehold.it/100x100
 learningResourceType: "Course"
 creativeWorkStatus: "Draft" # Incomplete, Draft, Published
