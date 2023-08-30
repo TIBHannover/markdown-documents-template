@@ -24,6 +24,7 @@ jobs:
 
   # Deployment job
   deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
     # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:
       pages: write
